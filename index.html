@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo-List</title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="small__container">
+            <h1 class="title" style="background-color: lightblue; color: black; text-align: center;">ToDo-List</h1>
+            <div class="inner">
+                <input style="background-color: black; color: white; text-align: center;" type="text" id="inputbox" placeholder="Enter a task" required>
+                <button style="background-color: black; color: white; align-items: center;" id="btn"> ADD</button>
+            </div>
+            <div class="inner__two">
+                <ul id="to-do">
+                    <li>Hello
+                        <button id="delete" onclick="deleting(event)"> delete</button> 
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    var input=document.getElementById("inputbox")
+var btn=document.getElementById("btn")
+var todo=document.getElementById("to-do")
+var dle=document.getElementById("delete")
+
+btn.addEventListener("click",function(){
+    var li =document.createElement("li")
+    li.innerHTML=input.value+"<button onclick= deleting(event) > delete</button>" 
+    todo.append(li)
+    input.value = "";
+})
+function deleting(event){
+    event.target.parentElement.remove()
+}
+</script>
